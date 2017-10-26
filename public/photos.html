@@ -1,0 +1,17 @@
+<div class="navigation" id="gallery">
+	<a ui-sref="galerry">Галерея</a>
+	<a href="#" data-hover="Sumptuous">Про Мене</a>
+	<a href="#" data-hover="Scintilla">Контакти</a>
+</div>
+
+	<div class="grid">
+		<img ng-src="{{vm.album.photos[2]}}"/>
+		<div class="grid__item" ng-repeat="images in vm.pht">
+			<a href="{{images}}" class="img-wrap"> <img ng-src="{{images}}"> </a>
+			<div class="description description--grid">Felicity</div>
+		</div>
+	</div>
+<div class="preview">
+	<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
+	<div class="description description--preview"></div>
+</div>

@@ -1,0 +1,16 @@
+
+<div class="navigation" id="gallery">
+	<a ui-sref="galerry">Галерея</a>
+	<a href="#" data-hover="Sumptuous">Про Мене</a>
+	<a href="#" data-hover="Scintilla">Контакти</a>
+</div>
+<div class="grid" ng-repeat="album in vm.albums track by album._id | orderBy:'':true">
+	<figure class="effect-romeo" >
+		<img src=" {{album.titlePhoto}} " alt="{{album.titlePhoto}}"/>
+		<figcaption>
+			<h2>{{album.title}}</h2>
+			<p>{{album.discription}}</p>
+			<a ui-sref="photos({id: album._id})">View more</a>
+		</figcaption>
+	</figure>
+</div>

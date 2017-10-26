@@ -1,0 +1,9 @@
+<div> 
+    <input 
+        type="file" 
+        file-model="vm.photos" multiple/>
+    <button ng-click="vm.upload()">Add</button>
+</div>
+<ul>
+        <li ng-repeat="file in vm.photos">{{file.name}}</li>
+    </ul>
