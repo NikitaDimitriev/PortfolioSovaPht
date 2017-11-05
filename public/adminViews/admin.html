@@ -1,14 +1,14 @@
-<div> 
-            <label>Image 4</label>
-            <input type="text" ng-model="vm.newAlbum.title" placeholder="Наpзва Альбому">
-            <input type="text" ng-model="vm.newAlbum.category" placeholder="Назва фотосету">
-            <input type="text" ng-model="vm.newAlbum.discription" placeholder="Опис">
-            <input id="image" 
-                type="file" 
-                file-model="vm.image"/>
-            <button ng-click="vm.upload()">Add1</button>
-        </div>
-        <hr />  
-    
-    <p>Uploaded Image / Size: {{sizeInBytes}} Bytes</p>
-    <img ng-src="{{uploadedImgSrc}}" />
+<div class="navigation">
+    <a ui-sref="home">На головну</a>
+    <a ui-sref="galerry-admin">Admin Gallery</a>
+</div>
+<div>
+    <label>Image 4</label>
+    <input type="text" ng-model="vm.newAlbum.title" placeholder="Наpзва Альбому">
+    <select ng-model="vm.newAlbum.category" ng-options="category as category.name for category in vm.categories track by category.id">
+          <option value="">-- Всі --</option>
+        </select>
+    <input type="text" ng-model="vm.newAlbum.discription" placeholder="Опис">
+    <input id="image" type="file" file-model="vm.image" />
+    <button ng-click="vm.upload()">Створити альбом</button>
+</div>

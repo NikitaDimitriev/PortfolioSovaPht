@@ -13,6 +13,12 @@ function AdminCtrl(AdminService, $state) {
         category: '',
         discription: '',
     };
+    vm.categories = [
+        {name: "Портретная съёмка", id: 0},
+        {name: "Семейная съёмка", id: 1},
+        {name: "Love-story", id: 2},
+        {name: "Архитектурная съёмка", id: 3}
+    ]
     vm.id = "id";
 
    function upload() {

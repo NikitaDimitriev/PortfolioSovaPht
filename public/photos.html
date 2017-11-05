@@ -4,14 +4,17 @@
 	<a href="#" data-hover="Scintilla">Контакти</a>
 </div>
 
-	<div class="grid">
-		<img ng-src="{{vm.album.photos[2]}}"/>
-		<div class="grid__item" ng-repeat="images in vm.pht">
-			<a href="{{images}}" class="img-wrap"> <img ng-src="{{images}}"> </a>
-			<div class="description description--grid">Felicity</div>
-		</div>
+<div class="contentPh">
+	<div class="photoPh" >
+		<img ng-repeat="(key, image) in vm.pht track by $index" ng-src="{{image}}" class="photo" ng-click="vm.displayModal(key)">
 	</div>
-<div class="preview">
-	<button class="action action--close"><i class="fa fa-times"></i><span class="text-hidden">Close</span></button>
-	<div class="description description--preview"></div>
+</div>
+
+<div class="modal" ng-show="vm.modal">
+	<i class="fa fa-times close" ng-click="vm.displayModal()"></i>
+	<div class="slider">
+		<div class="right-controll" ng-click="vm.nextImg(key)"></div>
+		<div class="left-controll" ng-click="vm.prevImg(key)"></div>
+		<img ng-src="{{vm.currentImg}}" alt="fail">
+	</div>
 </div>

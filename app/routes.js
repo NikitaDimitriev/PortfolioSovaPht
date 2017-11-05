@@ -11,7 +11,6 @@ module.exports = function(app) {
 
 	app.use(bodyParser.json()); 
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
-	// app.use(bodyParser.json({limit: '50mb'}));
 	app.use(bodyParser.urlencoded({extended: true }));
 	app.use(express.static(path.join(__dirname, 'public')));
 
@@ -20,7 +19,7 @@ module.exports = function(app) {
     		cb(null, 'public/upload/')
   		},
   		filename: function (req, file, cb) {
-    		cb(null, Date.now() + path.extname(file.originalname)) //Appending .jpg
+    		cb(null, Date.now() + path.extname(file.originalname))
   		}
 	})
 
@@ -34,13 +33,11 @@ var upload = multer({ storage: storage });
 	console.log(req.file, 'file');
 	console.log(req.files, 'files');
 	var data = JSON.parse(req.body.album);
-	// var path = req.file.path.replace('/public');
 	var titlePhoto = "upload/" + req.file.filename;
 	Album.create({ 
 				title: data.title,  
-				category: data.category, 
+				category: data.category.name, 
 				discription: data.discription,
-				// camera: req.body.camera,
 				titlePhoto : titlePhoto
 			},
 			function (err, album) {
@@ -69,7 +66,6 @@ var upload = multer({ storage: storage });
 			photosPath.push(pathToPhoto);
 		
 		};
-		// console.log(photosPath);
 		Album.findByIdAndUpdate (id, {
 			$set:{
 			photos: photosPath
@@ -80,9 +76,6 @@ var upload = multer({ storage: storage });
 		});
 	});
 
-
-		// frontend routes =========================================================
-		// route to handle all angular requests
 		app.get('*', function(req, res) {
 			res.sendfile('./public/index.html');
 		});

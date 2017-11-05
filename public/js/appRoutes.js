@@ -12,10 +12,22 @@ angular
 				controller: 'MainCtrl',
 				controllerAs: 'vm'
 			})
+			.state('about', {
+				templateUrl: 'views/about.html',
+				url: '/about',
+				controller: 'AboutCtrl',
+				controllerAs: 'vm'
+			})
 			.state('galerry', {
 				templateUrl: 'galerry.html',
 				url: '/galerry',
 				controller: 'GalleryCtrl',
+				controllerAs: 'vm'
+			})
+			.state('galerry-admin', {
+				templateUrl: 'views/gallery-admin.html',
+				url: '/galerry-admin',
+				controller: 'GalleryAdminCtrl',
 				controllerAs: 'vm'
 			})
 			.state('admin', {
