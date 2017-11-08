@@ -18,6 +18,12 @@ angular
 				controller: 'AboutCtrl',
 				controllerAs: 'vm'
 			})
+			.state('contact', {
+				templateUrl: 'views/contact.html',
+				url: '/contact',
+				controller: 'ContactCtrl',
+				controllerAs: 'vm'
+			})
 			.state('galerry', {
 				templateUrl: 'galerry.html',
 				url: '/galerry',
