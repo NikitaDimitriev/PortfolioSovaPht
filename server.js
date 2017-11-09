@@ -11,7 +11,7 @@ var Album          = require('./app/models/Album');
 // config files
 var db = require('./config/db');
 
-mongoose.connect(db.url, function(err, db) {
+mongoose.connect(db.uri, function(err, db) {
 	if (err) {
 		console.log("error:", err);	
 	} else {
