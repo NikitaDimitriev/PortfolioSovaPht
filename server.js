@@ -9,13 +9,13 @@ var Album          = require('./app/models/Album');
 // configuration ===========================================
 	
 // config files
-var db = require('./config/db');
-
-mongoose.connect(db.uri, function(err, db) {
+var db = 'mongodb://u88uxhpmzxgo65a:3SKiaBIM1s027QDRFkhS@bqdx03sb4rgkp7b-mongodb.services.clever-cloud.com:27017/bqdx03sb4rgkp7b';
+console.log(db);
+mongoose.connect(db, { useMongoClient: true }, function(err, db) {
 	if (err) {
 		console.log("error:", err);	
 	} else {
-  		console.log("Connected correctly to database", db.url);
+  		console.log("Connected correctly to database", db.port);
   	}
 });
 
