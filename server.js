@@ -9,7 +9,7 @@ var Album          = require('./app/models/Album');
 // configuration ===========================================
 	
 // config files
-var db = 'mongodb://u88uxhpmzxgo65a:3SKiaBIM1s027QDRFkhS@bqdx03sb4rgkp7b-mongodb.services.clever-cloud.com:27017/bqdx03sb4rgkp7b';
+var db = process.env.MONGODB_ADDON_URI;
 console.log(process.env);
 mongoose.connect(db, { useMongoClient: true }, function(err, db) {
 	if (err) {
