@@ -9,13 +9,13 @@ var Album          = require('./app/models/Album');
 // configuration ===========================================
 	
 // config files
-var db = require('./config/db');
-
-mongoose.connect(db.uri, function(err, db) {
+var db = process.env.MONGODB_ADDON_URI;
+console.log(process.env);
+mongoose.connect(db, { useMongoClient: true }, function(err, db) {
 	if (err) {
 		console.log("error:", err);	
 	} else {
-  		console.log("Connected correctly to database", db.url);
+  		console.log("Connected correctly to database", db.port);
   	}
 });
 
