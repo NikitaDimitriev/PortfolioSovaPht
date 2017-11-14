@@ -33,12 +33,12 @@ var upload = multer({ storage: storage });
 	app.post('/api/createAlbum' ,function (req,res) {
 	console.log(req.file, 'file');
 	console.log(req.files, 'files');
-	var data = JSON.parse(req.body.album);
+	//var data = JSON.parse(req.body.album);
 	//var titlePhoto = "upload/" + req.file.filename;
 	Album.create({ 
-				title: data.title,  
-				category: data.category.name, 
-				discription: data.discription,
+				title: req.body.album.title,  
+				category: req.body.album.category.name, 
+				discription: req.body.album.discription,
 	//			titlePhoto : titlePhoto
 			},
 			function (err, album) {
