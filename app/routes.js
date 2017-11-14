@@ -13,10 +13,11 @@ module.exports = function(app) {
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	app.use(bodyParser.urlencoded({extended: true }));
 	app.use(express.static(path.join(__dirname, 'public')));
-
+	
+	
 	var storage = multer.diskStorage({
   		destination: function (req, file, cb) {
-    		cb(null, process.env.APP_HOME + "upload/")
+    		cb(null, "/some/empty/folder:bucket-15b016b8-5421-4eb4-9a21-d5a5ba9b2213-fsbucket.services.clever-cloud.com")
   		},
   		filename: function (req, file, cb) {
     		cb(null, Date.now() + path.extname(file.originalname))
