@@ -31,7 +31,7 @@ var upload = multer({ storage: storage });
 	var single = upload.single('file');
 	
 	app.post('/api/createAlbum' ,function (req,res) {
-	console.log(req.file, 'file');
+	console.log(req.body, 'file');
 	console.log(req.files, 'files');
 	//var data = JSON.parse(req.body.album);
 	//var titlePhoto = "upload/" + req.file.filename;
