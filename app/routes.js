@@ -29,17 +29,17 @@ var upload = multer({ storage: storage });
 	var array = upload.array('images', 35);
 
 	var single = upload.single('file');
-
-	app.post('/api/createAlbum', single ,function (req,res) {
+	
+	app.post('/api/createAlbum' ,function (req,res) {
 	console.log(req.file, 'file');
 	console.log(req.files, 'files');
 	var data = JSON.parse(req.body.album);
-	var titlePhoto = "upload/" + req.file.filename;
+	//var titlePhoto = "upload/" + req.file.filename;
 	Album.create({ 
 				title: data.title,  
 				category: data.category.name, 
 				discription: data.discription,
-				titlePhoto : titlePhoto
+	//			titlePhoto : titlePhoto
 			},
 			function (err, album) {
 	  		if (err) console.log(err);
