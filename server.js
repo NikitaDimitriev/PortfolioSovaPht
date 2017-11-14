@@ -9,7 +9,7 @@ var Album          = require('./app/models/Album');
 // configuration ===========================================
 	
 // config files
-var db = process.env.MONGODB_ADDON_URI;
+var db = process.env.MONGODB_ADDON_URI || 'mongodb://localhost:27017/PortfolioDB';
 console.log(process.env);
 mongoose.connect(db, { useMongoClient: true }, function(err, db) {
 	if (err) {

@@ -16,7 +16,7 @@ module.exports = function(app) {
 
 	var storage = multer.diskStorage({
   		destination: function (req, file, cb) {
-    		cb(null, 'public/upload/')
+    		cb(null, process.env.BUCKET_HOST)
   		},
   		filename: function (req, file, cb) {
     		cb(null, Date.now() + path.extname(file.originalname))
