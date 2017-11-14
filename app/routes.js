@@ -13,11 +13,10 @@ module.exports = function(app) {
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 	app.use(bodyParser.urlencoded({extended: true }));
 	app.use(express.static(path.join(__dirname, 'public')));
-	
-	
+
 	var storage = multer.diskStorage({
   		destination: function (req, file, cb) {
-    		cb(null, "/some/empty/folder:bucket-15b016b8-5421-4eb4-9a21-d5a5ba9b2213-fsbucket.services.clever-cloud.com")
+    		cb(null, 'public/upload/')
   		},
   		filename: function (req, file, cb) {
     		cb(null, Date.now() + path.extname(file.originalname))
@@ -29,17 +28,16 @@ var upload = multer({ storage: storage });
 	var array = upload.array('images', 35);
 
 	var single = upload.single('file');
-	
-	app.post('/api/createAlbum' ,function (req,res) {
-	console.log(req, 'file');
-	console.log(req.files, 'files');
-	//var data = JSON.parse(req.body.album);
-	//var titlePhoto = "upload/" + req.file.filename;
+
+	app.post('/api/createAlbum', single ,function (req,res) {
+	console.log(req.body.album, 'file');
+	var data = JSON.parse(req.body.album);
+	var titlePhoto = "upload/" + req.file.filename;
 	Album.create({ 
-				title: "req.body.album.title",  
-				category: "req.body.album.category.name", 
-				discription: "req.body.album.discription",
-	//			titlePhoto : titlePhoto
+				title: data.title,  
+				category: data.category.name, 
+				discription: data.discription,
+				titlePhoto : titlePhoto
 			},
 			function (err, album) {
 	  		if (err) console.log(err);
