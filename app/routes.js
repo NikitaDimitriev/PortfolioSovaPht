@@ -36,9 +36,9 @@ var upload = multer({ storage: storage });
 	//var data = JSON.parse(req.body.album);
 	//var titlePhoto = "upload/" + req.file.filename;
 	Album.create({ 
-				title: req.body.album.title,  
-				category: req.body.album.category.name, 
-				discription: req.body.album.discription,
+				title: "req.body.album.title",  
+				category: "req.body.album.category.name", 
+				discription: "req.body.album.discription",
 	//			titlePhoto : titlePhoto
 			},
 			function (err, album) {
