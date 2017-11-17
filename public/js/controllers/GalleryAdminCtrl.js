@@ -7,6 +7,7 @@ function GalleryAdminCtrl(PortfolioService, $state) {
 var vm = this;
 
 vm.albums = [];
+vm.deleteAlbum = deleteAlbum;
 
 activate();
 
@@ -21,6 +22,13 @@ function displayAlbums() {
             console.log('data', data);
             return vm.albums;
         });
+}
+
+function deleteAlbum(albumId){
+    console.log("click", albumId)
+    PortfolioService.deleteAlbum(albumId).then(function(data){
+        if(data) displayAlbums();
+    })
 }
 
 }

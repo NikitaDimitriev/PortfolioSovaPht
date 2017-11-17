@@ -90,3 +90,10 @@
 	-moz-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+
+.deleteIcon{
+	font-size: 50px;
+	color: #102030;
+	box-shadow: rgba(255,255,255,0.3);
+	z-index: 9999;
+}

@@ -10,7 +10,6 @@ var Album          = require('./app/models/Album');
 	
 // config files
 var db = process.env.MONGODB_ADDON_URI || 'mongodb://localhost:27017/PortfolioDB';
-console.log(process.env);
 mongoose.connect(db, { useMongoClient: true }, function(err, db) {
 	if (err) {
 		console.log("error:", err);	
@@ -35,8 +34,7 @@ app.get('/api/albums', function(req, res){
 });
 
 app.get('/api/albums/:id', function(req, res){
-	var id = req.params.id;
-	console.log(id); 
+	var id = req.params.id; 
 	Album.findById( id, function (err, photo) {
   		if (err) console.log(err);
 		res.json(photo);

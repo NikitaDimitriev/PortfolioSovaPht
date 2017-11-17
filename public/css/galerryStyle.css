@@ -2,13 +2,11 @@
 	position: relative;
 	display: inline-flex;
 	justify-content: center;
+	flex-wrap: wrap;
 	margin: 0 auto;
 	padding: 1em 2em 4em;
-	max-width: 1000px;
 	list-style: none;
 	text-align: center;
-	/*flex-direction: column;*/
-	/*flex-wrap: wrap;*/
 }
 
 /* Common style */
@@ -16,12 +14,7 @@
 	position: relative;
 	overflow: hidden;
 	margin: 10px 1%;
-	/*margin-left: 35px;*/
-	/*min-width: 320px;
-	max-width: 480px;
-	max-height: 480px;*/
 	width: 520px;
-	/*width: 48%;*/
 	height: 360px;
 	background: #3085a3;
 	text-align: center;
@@ -60,8 +53,6 @@
 	height: 100%;
 }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
@@ -170,6 +161,13 @@ figure.effect-romeo:hover p {
 	background-color: #256678;
 	display: flex;
 	justify-content: space-around;
+}
+
+.deleteIcon{
+	font-size: 300px;
+	color: #102030;
+	box-shadow: rgba(255,255,255,0.3);
+	z-index: 9999;
 }
 
 @media screen and (max-width: 50em) {

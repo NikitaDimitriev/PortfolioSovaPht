@@ -7,11 +7,18 @@ PortfolioService.$inject = ['$http'];
 function PortfolioService($http) {
 	return {
 		getAlbums: getAlbums,
-        getPhotos: getPhotos
+        getPhotos: getPhotos,
+        deleteAlbum: deleteAlbum
 	};
 
 	function getAlbums() {
 		return $http.get('/api/albums')
+            .then(complete)
+            .catch(failed);
+    }
+    
+    function deleteAlbum(id) {
+		return $http.delete('/api/delete-album/' + id)
             .then(complete)
             .catch(failed);
 	}

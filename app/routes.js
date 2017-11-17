@@ -75,6 +75,15 @@ var upload = multer({ storage: storage });
 		});
 	});
 
+	app.delete('/api/delete-album/:id', function(req, res){
+		var id = req.params.id;
+		console.log(id);
+		Album.findByIdAndRemove( id, function (err, album) {
+			  if (err) console.log(err);
+			res.json(album);
+		});
+	});
+
 		app.get('*', function(req, res) {
 			res.sendfile('./public/index.html');
 		});

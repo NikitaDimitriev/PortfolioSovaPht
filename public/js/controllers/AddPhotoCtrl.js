@@ -28,7 +28,7 @@ function AddPhotoCtrl(AdminService, $state, $stateParams) {
  		AdminService.postPhotos(file, id)
         .then(function(data) {
                     console.log('test2', file);
-                    $state.reload();
+                    $state.go('admin');
         });
        
     }
