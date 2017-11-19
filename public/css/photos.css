@@ -67,7 +67,7 @@
 .left-controll{
     position: absolute;
     width: 20%;
-    background-color: #0B0505;
+    background-color: rgb(53, 46, 46);
     height: 100%;
     opacity: 0.3;
     z-index: 2;

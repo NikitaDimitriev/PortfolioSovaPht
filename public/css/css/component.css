@@ -365,6 +365,69 @@ html, body, .container, .header {
 	-moz-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+.about{
+	height: 100%;
+	width: 100%;
+	background-image: url("../../img/about.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-color: #fff;
+}
+
+.about-content{
+	width: 30%;
+	background-color: #FFFDC1;
+	color: #2E94B9;
+	box-shadow: rgba(247,214,169,0.4);
+	font-size: 15px;
+	padding: 10px;
+	margin: 30px;
+	z-index: 3;
+	position: absolute;
+	float: right;
+	overflow: hidden;
+}
+.about-content p{
+	text-align: center;
+}
+.contact{
+	height: 100%;
+	width: 100%;
+	background-image: url("../../img/contact.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	background-color: #fff;
+}
+
+.contact-content{
+	width: 30%;
+	background-color: #FFFDC1;
+	color: #2E94B9;
+	box-shadow: rgba(247,214,169,0.4);
+	font-size: 15px;
+	padding: 10px;
+	margin: 30px;
+	z-index: 3;
+	position: absolute;
+	float: right;
+	overflow: hidden;
+}
+.contact-content p{
+	text-align: center;
+}
+.content-title{
+	font-size: 25px;
+	font-weight: bold;
+}
+.contact a {
+	text-align: center;
+	color: #2E94B9;
+	font-size: 36px;
+}
 
 
 /*Media*/
