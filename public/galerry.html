@@ -1,12 +1,12 @@
-
 <div class="navigation" id="gallery">
+	<img src="img/logo.jpg" ui-sref="home" alt="logo">
 	<a ui-sref="galerry">Галерея</a>
-	<a ui-sref="about">Про Мене</a>
-	<a ui-sref="contact">Контакти</a>
+	<a ui-sref="about">Обо Мне</a>
+	<a ui-sref="contact">Контакты</a>
 </div>
 <div class="grid" ng-repeat="album in vm.albums track by album._id">
 	<figure class="effect-romeo">
-		<img src=" {{album.titlePhoto}} " alt="{{album.titlePhoto}}"/>
+		<img src=" {{album.titlePhoto}} " alt="{{album.titlePhoto}}" />
 		<figcaption>
 			<h2>{{album.title}}</h2>
 			<p>{{album.category}}</p>

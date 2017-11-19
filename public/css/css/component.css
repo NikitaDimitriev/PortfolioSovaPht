@@ -62,12 +62,9 @@ html, body, .container, .header {
 	transform: translateX(-50%) translateY(-50%);
 }
 
-.title h1 {
-	padding: 0 0 0.2em;
-	color: #FD5959;
-	font-weight: 800;
-	font-size: 3.25em;
-	margin: 0 auto;
+.title img {
+	height: 40%;
+	width: 40%;
 }
 
 .title p {
@@ -289,6 +286,12 @@ html, body, .container, .header {
 	font-weight: 400;
 	text-shadow: 0 0 1px rgba(255,255,255,0.3);
 	font-size: 1.35em;
+}
+
+.navigation img {
+	height: 2.35em;
+	width: 2.35em;
+	margin: 10px 20px;
 }
 
 .navigation a:hover,
