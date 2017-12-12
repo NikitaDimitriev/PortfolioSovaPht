@@ -16,7 +16,7 @@ module.exports = function(app) {
 
 	var storage = multer.diskStorage({
   		destination: function (req, file, cb) {
-    		cb(null, 'public/upload/')
+    		cb(null, 'public/')
   		},
   		filename: function (req, file, cb) {
     		cb(null, Date.now() + path.extname(file.originalname))
@@ -32,7 +32,7 @@ var upload = multer({ storage: storage });
 	app.post('/api/createAlbum', single ,function (req,res) {
 	console.log(req.body.album, 'file');
 	var data = JSON.parse(req.body.album);
-	var titlePhoto = "upload/" + req.file.filename;
+	var titlePhoto = req.file.filename;
 	Album.create({ 
 				title: data.title,  
 				category: data.category.name, 
